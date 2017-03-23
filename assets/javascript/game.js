@@ -15,12 +15,15 @@ var printResults=function(){
 var letters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 playAgain=true;
 // while(true){
-	
+	var randomNumber=0;
+	var computerChoice="";
 	//generate a computer guessed letter//
-	randomNumber=Math.floor(Math.random()*26);
-	 computerChoice=letters[randomNumber];
+	 var computerGuess=function(){
+		randomNumber=Math.floor(Math.random()*26);
+		computerChoice=letters[randomNumber];
+		console.log(computerChoice);
+	 }
 	//get user input letter//
-	// alert("Guess a letter")//
 	document.onkeydown=function(event){
 		userGuess=event.key;
 		yourGuesses.push(userGuess);
@@ -34,6 +37,7 @@ playAgain=true;
 		guessesLeft=9;
 		yourGuesses=[];
 		printResults();
+		computerGuess();
 		}
 
 		else{
@@ -44,6 +48,7 @@ playAgain=true;
 				guessesLeft=9;
 				yourGuesses=[];
 				printResults();
+				computerGuess();
 			}
 		}
 	}

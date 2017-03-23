@@ -18,14 +18,13 @@ playAgain=true;
 	
 	//generate a computer guessed letter//
 	randomNumber=Math.floor(Math.random()*26);
-	// computerChoice=letters[randomNumber];
-	computerChoice="m";
+	 computerChoice=letters[randomNumber];
 	//get user input letter//
 	// alert("Guess a letter")//
 	document.onkeydown=function(event){
 		userGuess=event.key;
 		yourGuesses.push(userGuess);
-		alert(userGuess);
+		// alert(userGuess);
 		guessesLeft--;
 		printResults();
 		
